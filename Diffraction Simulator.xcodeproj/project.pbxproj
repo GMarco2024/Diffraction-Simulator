@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		335467D72D569D1600E132AA /* Diffraction_SimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467D62D569D1600E132AA /* Diffraction_SimulatorApp.swift */; };
+		335467D92D569D1600E132AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467D82D569D1600E132AA /* ContentView.swift */; };
+		335467DB2D569D1800E132AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335467DA2D569D1800E132AA /* Assets.xcassets */; };
+		335467DF2D569D1800E132AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335467DE2D569D1800E132AA /* Preview Assets.xcassets */; };
+		335467E92D569D1800E132AA /* Diffraction_SimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467E82D569D1800E132AA /* Diffraction_SimulatorTests.swift */; };
+		335467F32D569D1800E132AA /* Diffraction_SimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467F22D569D1800E132AA /* Diffraction_SimulatorUITests.swift */; };
+		335467F52D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467F42D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		335467E52D569D1800E132AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335467CB2D569D1600E132AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 335467D22D569D1600E132AA;
+			remoteInfo = "Diffraction Simulator";
+		};
+		335467EF2D569D1800E132AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335467CB2D569D1600E132AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 335467D22D569D1600E132AA;
+			remoteInfo = "Diffraction Simulator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		335467D32D569D1600E132AA /* Diffraction Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diffraction Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		335467D62D569D1600E132AA /* Diffraction_SimulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorApp.swift; sourceTree = "<group>"; };
+		335467D82D569D1600E132AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		335467DA2D569D1800E132AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		335467DC2D569D1800E132AA /* Diffraction_Simulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diffraction_Simulator.entitlements; sourceTree = "<group>"; };
+		335467DE2D569D1800E132AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		335467E42D569D1800E132AA /* Diffraction SimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diffraction SimulatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		335467E82D569D1800E132AA /* Diffraction_SimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorTests.swift; sourceTree = "<group>"; };
+		335467EE2D569D1800E132AA /* Diffraction SimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diffraction SimulatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		335467F22D569D1800E132AA /* Diffraction_SimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorUITests.swift; sourceTree = "<group>"; };
+		335467F42D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		335467D02D569D1600E132AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335467E12D569D1800E132AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335467EB2D569D1800E132AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		335467CA2D569D1600E132AA = {
+			isa = PBXGroup;
+			children = (
+				335467D52D569D1600E132AA /* Diffraction Simulator */,
+				335467E72D569D1800E132AA /* Diffraction SimulatorTests */,
+				335467F12D569D1800E132AA /* Diffraction SimulatorUITests */,
+				335467D42D569D1600E132AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		335467D42D569D1600E132AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				335467D32D569D1600E132AA /* Diffraction Simulator.app */,
+				335467E42D569D1800E132AA /* Diffraction SimulatorTests.xctest */,
+				335467EE2D569D1800E132AA /* Diffraction SimulatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		335467D52D569D1600E132AA /* Diffraction Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				335467D62D569D1600E132AA /* Diffraction_SimulatorApp.swift */,
+				335467D82D569D1600E132AA /* ContentView.swift */,
+				335467DA2D569D1800E132AA /* Assets.xcassets */,
+				335467DC2D569D1800E132AA /* Diffraction_Simulator.entitlements */,
+				335467DD2D569D1800E132AA /* Preview Content */,
+			);
+			path = "Diffraction Simulator";
+			sourceTree = "<group>";
+		};
+		335467DD2D569D1800E132AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				335467DE2D569D1800E132AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		335467E72D569D1800E132AA /* Diffraction SimulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				335467E82D569D1800E132AA /* Diffraction_SimulatorTests.swift */,
+			);
+			path = "Diffraction SimulatorTests";
+			sourceTree = "<group>";
+		};
+		335467F12D569D1800E132AA /* Diffraction SimulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				335467F22D569D1800E132AA /* Diffraction_SimulatorUITests.swift */,
+				335467F42D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift */,
+			);
+			path = "Diffraction SimulatorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		335467D22D569D1600E132AA /* Diffraction Simulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335467F82D569D1800E132AA /* Build configuration list for PBXNativeTarget "Diffraction Simulator" */;
+			buildPhases = (
+				335467CF2D569D1600E132AA /* Sources */,
+				335467D02D569D1600E132AA /* Frameworks */,
+				335467D12D569D1600E132AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Diffraction Simulator";
+			productName = "Diffraction Simulator";
+			productReference = 335467D32D569D1600E132AA /* Diffraction Simulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		335467E32D569D1800E132AA /* Diffraction SimulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335467FB2D569D1800E132AA /* Build configuration list for PBXNativeTarget "Diffraction SimulatorTests" */;
+			buildPhases = (
+				335467E02D569D1800E132AA /* Sources */,
+				335467E12D569D1800E132AA /* Frameworks */,
+				335467E22D569D1800E132AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				335467E62D569D1800E132AA /* PBXTargetDependency */,
+			);
+			name = "Diffraction SimulatorTests";
+			productName = "Diffraction SimulatorTests";
+			productReference = 335467E42D569D1800E132AA /* Diffraction SimulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		335467ED2D569D1800E132AA /* Diffraction SimulatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335467FE2D569D1800E132AA /* Build configuration list for PBXNativeTarget "Diffraction SimulatorUITests" */;
+			buildPhases = (
+				335467EA2D569D1800E132AA /* Sources */,
+				335467EB2D569D1800E132AA /* Frameworks */,
+				335467EC2D569D1800E132AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				335467F02D569D1800E132AA /* PBXTargetDependency */,
+			);
+			name = "Diffraction SimulatorUITests";
+			productName = "Diffraction SimulatorUITests";
+			productReference = 335467EE2D569D1800E132AA /* Diffraction SimulatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		335467CB2D569D1600E132AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					335467D22D569D1600E132AA = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					335467E32D569D1800E132AA = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 335467D22D569D1600E132AA;
+					};
+					335467ED2D569D1800E132AA = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 335467D22D569D1600E132AA;
+					};
+				};
+			};
+			buildConfigurationList = 335467CE2D569D1600E132AA /* Build configuration list for PBXProject "Diffraction Simulator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 335467CA2D569D1600E132AA;
+			productRefGroup = 335467D42D569D1600E132AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				335467D22D569D1600E132AA /* Diffraction Simulator */,
+				335467E32D569D1800E132AA /* Diffraction SimulatorTests */,
+				335467ED2D569D1800E132AA /* Diffraction SimulatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		335467D12D569D1600E132AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335467DF2D569D1800E132AA /* Preview Assets.xcassets in Resources */,
+				335467DB2D569D1800E132AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335467E22D569D1800E132AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335467EC2D569D1800E132AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		335467CF2D569D1600E132AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335467D92D569D1600E132AA /* ContentView.swift in Sources */,
+				335467D72D569D1600E132AA /* Diffraction_SimulatorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335467E02D569D1800E132AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335467E92D569D1800E132AA /* Diffraction_SimulatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335467EA2D569D1800E132AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				335467F32D569D1800E132AA /* Diffraction_SimulatorUITests.swift in Sources */,
+				335467F52D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		335467E62D569D1800E132AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 335467D22D569D1600E132AA /* Diffraction Simulator */;
+			targetProxy = 335467E52D569D1800E132AA /* PBXContainerItemProxy */;
+		};
+		335467F02D569D1800E132AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 335467D22D569D1600E132AA /* Diffraction Simulator */;
+			targetProxy = 335467EF2D569D1800E132AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		335467F62D569D1800E132AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		335467F72D569D1800E132AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		335467F92D569D1800E132AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Diffraction Simulator/Diffraction_Simulator.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Diffraction Simulator/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marco.Diffraction-Simulator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		335467FA2D569D1800E132AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Diffraction Simulator/Diffraction_Simulator.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Diffraction Simulator/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marco.Diffraction-Simulator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		335467FC2D569D1800E132AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marco.Diffraction-SimulatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diffraction Simulator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Diffraction Simulator";
+			};
+			name = Debug;
+		};
+		335467FD2D569D1800E132AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marco.Diffraction-SimulatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diffraction Simulator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Diffraction Simulator";
+			};
+			name = Release;
+		};
+		335467FF2D569D1800E132AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marco.Diffraction-SimulatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Diffraction Simulator";
+			};
+			name = Debug;
+		};
+		335468002D569D1800E132AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marco.Diffraction-SimulatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Diffraction Simulator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		335467CE2D569D1600E132AA /* Build configuration list for PBXProject "Diffraction Simulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335467F62D569D1800E132AA /* Debug */,
+				335467F72D569D1800E132AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335467F82D569D1800E132AA /* Build configuration list for PBXNativeTarget "Diffraction Simulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335467F92D569D1800E132AA /* Debug */,
+				335467FA2D569D1800E132AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335467FB2D569D1800E132AA /* Build configuration list for PBXNativeTarget "Diffraction SimulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335467FC2D569D1800E132AA /* Debug */,
+				335467FD2D569D1800E132AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335467FE2D569D1800E132AA /* Build configuration list for PBXNativeTarget "Diffraction SimulatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335467FF2D569D1800E132AA /* Debug */,
+				335468002D569D1800E132AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 335467CB2D569D1600E132AA /* Project object */;
+}

@@ -296,10 +296,15 @@ struct ContentView: View {
     @State private var errorMessage: String = ""
     @State private var showError = false
     
+    
+    //Beige color. You can customize whatever color you want
+    private let customColor = Color(red: 0.96, green: 0.93, blue: 0.85)
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("Diffraction Simulator")
                 .font(.title)
+                .foregroundColor(customColor)
                 .padding()
             
             HStack(spacing: 20) {
@@ -309,6 +314,7 @@ struct ContentView: View {
                     ("r0 =", $curvature),
                     ("ell0 =", $coherence),
                     ("λ =", $wavelength)
+                    
                 ])
                 
                 // Group grating parameters.

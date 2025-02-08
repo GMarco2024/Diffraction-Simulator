@@ -3,7 +3,6 @@
 //  Diffraction Simulator
 //
 
-
 import SwiftUI
 import Foundation
 
@@ -296,8 +295,7 @@ struct ContentView: View {
     @State private var errorMessage: String = ""
     @State private var showError = false
     
-    
-    //Beige color. You can customize whatever color you want
+    // Beige color. You can customize whatever color you want.
     private let customColor = Color(red: 0.96, green: 0.93, blue: 0.85)
     
     var body: some View {
@@ -314,7 +312,6 @@ struct ContentView: View {
                     ("r0 =", $curvature),
                     ("ell0 =", $coherence),
                     ("λ =", $wavelength)
-                    
                 ])
                 
                 // Group grating parameters.
@@ -346,6 +343,7 @@ struct ContentView: View {
             Button("OK", role: .cancel) { }
         } message: {
             Text(errorMessage)
+                .foregroundColor(customColor)
         }
     }
     
@@ -354,9 +352,11 @@ struct ContentView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(title)
                 .font(.headline)
+                .foregroundColor(customColor)
             ForEach(0..<fields.count, id: \.self) { index in
                 HStack {
                     Text(fields[index].0)
+                        .foregroundColor(customColor)
                     TextField("", text: fields[index].1)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 120)

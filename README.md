@@ -10,6 +10,6 @@ The mathematica source code can be found in this repository as a .swift file cal
 The mathematica code itself was provided by Dr. Daniel M. Kaplan and Dr. Derrick C. Mancini during a course
 called "IPRO 497: Antimatter Interferometer" under their instruction. I, along with several others, worked together
 on interpreting the mathematica code to optimize it. I continued when the course ended by converting it into a macOS application
-for practice. All work is cited accordingly.
+for practice (still in progress). All work is cited accordingly.
 
 </p>

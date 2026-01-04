@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/GMarco2024/Diffraction-Simulator/blob/main/Screenshot.png?raw=true" alt="Banner" width="25%">
+  <img src="https://github.com/GMarco2024/Diffraction-Simulator/blob/main/Screenshot.png?raw=true" alt="Banner" width="30%">
 </div>
 <br>
 

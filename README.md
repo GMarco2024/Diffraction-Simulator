@@ -1,0 +1,9 @@
+<p> 
+
+The purpose of this project, is to convert a mathematica code into swift in the form of a macOS application.
+The mathematica source code can be found in this repository as a .swift file called "Mathematica Source Code".
+The mathematica code itself was provided by Dr. Daniel M. Kaplan and Dr. Derrick C. Mancini during a course
+called "IPRO 497: Antimatter Interferometer" under their instruction.
+
+
+</p>

@@ -1,3 +1,8 @@
+<div align="center">
+  <img src="https://github.com/GMarco2024/Diffraction-Simulator/blob/main/Screenshot.png?raw=true" alt="Banner" width="25%">
+</div>
+<br>
+
 <p> 
 
 The purpose of this project, is to convert a mathematica code into swift in the form of a macOS application.

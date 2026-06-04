@@ -433,41 +433,65 @@ struct IntensityPlotView: View {
     }
     
     var body: some View {
-        GeometryReader { geo in
-            let rows = matrix.count
-            if rows == 0 {
-                EmptyView()
-            } else {
-                let cols = matrix[0].count
+        VStack(spacing: 12) {
+            // Plot Title
+            Text("Simulated Intensity Distribution")
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+                .padding(.top, 4)
+            
+            HStack(spacing: 8) {
+                // Y-Axis Label
+                Text("Transverse Position (X)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .rotationEffect(.degrees(-90))
+                    // .fixedSize() ensures the text frame doesn't get clipped after rotation
+                    .fixedSize()
                 
-                // Swap how we use rows and cols to natively rotate the plot CCW
-                let cellWidth = geo.size.width / CGFloat(rows)
-                let cellHeight = geo.size.height / CGFloat(cols)
-                
-                let flat = matrix.flatMap { $0 }
-                let maxVal = flat.max() ?? 1.0
-                let minVal = flat.min() ?? 0.0
-                
-                Canvas { context, _ in
-                    for i in 0..<rows {
-                        for j in 0..<cols {
-                            let denom = max(maxVal - minVal, 1e-12)
-                            let raw = (matrix[i][j] - minVal) / denom
-                            let norm = raw.isFinite ? raw : 0.0
-                            
-                            // i (Z-axis) maps to the horizontal X coordinate
-                            // j (X-axis) maps to the vertical Y coordinate, inverted to match the previous -90deg rotation
-                            let rect = CGRect(
-                                x: CGFloat(i) * cellWidth,
-                                y: CGFloat(cols - 1 - j) * cellHeight,
-                                width: cellWidth,
-                                height: cellHeight
-                            )
-                            context.fill(Path(rect), with: .color(colorForIntensity(norm: norm)))
+                // The Plot
+                GeometryReader { geo in
+                    let rows = matrix.count
+                    if rows == 0 {
+                        EmptyView()
+                    } else {
+                        let cols = matrix[0].count
+                        
+                        let cellWidth = geo.size.width / CGFloat(rows)
+                        let cellHeight = geo.size.height / CGFloat(cols)
+                        
+                        let flat = matrix.flatMap { $0 }
+                        let maxVal = flat.max() ?? 1.0
+                        let minVal = flat.min() ?? 0.0
+                        
+                        Canvas { context, _ in
+                            for i in 0..<rows {
+                                for j in 0..<cols {
+                                    let denom = max(maxVal - minVal, 1e-12)
+                                    let raw = (matrix[i][j] - minVal) / denom
+                                    let norm = raw.isFinite ? raw : 0.0
+                                    
+                                    let rect = CGRect(
+                                        x: CGFloat(i) * cellWidth,
+                                        y: CGFloat(cols - 1 - j) * cellHeight,
+                                        width: cellWidth,
+                                        height: cellHeight
+                                    )
+                                    context.fill(Path(rect), with: .color(colorForIntensity(norm: norm)))
+                                }
+                            }
                         }
                     }
                 }
+                .border(Color.gray.opacity(0.3), width: 1) // Add a border so the edges are visible
             }
+            
+            // X-Axis Label
+            Text("Propagation Distance (Z)")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(.bottom, 4)
         }
     }
 }

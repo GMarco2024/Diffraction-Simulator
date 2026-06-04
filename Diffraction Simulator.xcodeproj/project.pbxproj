@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		335467D72D569D1600E132AA /* Diffraction_SimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467D62D569D1600E132AA /* Diffraction_SimulatorApp.swift */; };
-		335467D92D569D1600E132AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467D82D569D1600E132AA /* ContentView.swift */; };
-		335467DB2D569D1800E132AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335467DA2D569D1800E132AA /* Assets.xcassets */; };
-		335467DF2D569D1800E132AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335467DE2D569D1800E132AA /* Preview Assets.xcassets */; };
 		335467E92D569D1800E132AA /* Diffraction_SimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467E82D569D1800E132AA /* Diffraction_SimulatorTests.swift */; };
-		335467F32D569D1800E132AA /* Diffraction_SimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467F22D569D1800E132AA /* Diffraction_SimulatorUITests.swift */; };
-		335467F52D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335467F42D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift */; };
-		3392488F2D8626EB00DF6874 /* Mathematica Source Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392488E2D8626EB00DF6874 /* Mathematica Source Code.swift */; };
+		E81DECC92FD1F22700E0544E /* Diffraction_SimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECC62FD1F22700E0544E /* Diffraction_SimulatorUITests.swift */; };
+		E81DECCA2FD1F22700E0544E /* Diffraction_SimulatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECC72FD1F22700E0544E /* Diffraction_SimulatorUITestsLaunchTests.swift */; };
+		E81DECD32FD1F24400E0544E /* Mathematica Source Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECD12FD1F24400E0544E /* Mathematica Source Code.swift */; };
+		E81DECD42FD1F24400E0544E /* Diffraction_SimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECD02FD1F24400E0544E /* Diffraction_SimulatorApp.swift */; };
+		E81DECD52FD1F24400E0544E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECCE2FD1F24400E0544E /* ContentView.swift */; };
+		E81DECD62FD1F24400E0544E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81DECCB2FD1F24400E0544E /* Preview Assets.xcassets */; };
+		E81DECD72FD1F24400E0544E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81DECCD2FD1F24400E0544E /* Assets.xcassets */; };
+		E81DECD82FD1F24400E0544E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81DECCB2FD1F24400E0544E /* Preview Assets.xcassets */; };
+		E81DECD92FD1F24400E0544E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81DECCD2FD1F24400E0544E /* Assets.xcassets */; };
+		E81DECDA2FD1F24400E0544E /* Mathematica Source Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECD12FD1F24400E0544E /* Mathematica Source Code.swift */; };
+		E81DECDB2FD1F24400E0544E /* Diffraction_SimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECD02FD1F24400E0544E /* Diffraction_SimulatorApp.swift */; };
+		E81DECDC2FD1F24400E0544E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECCE2FD1F24400E0544E /* ContentView.swift */; };
+		E81DECDD2FD1F24400E0544E /* Mathematica Source Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECD12FD1F24400E0544E /* Mathematica Source Code.swift */; };
+		E81DECDE2FD1F24400E0544E /* Diffraction_SimulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECD02FD1F24400E0544E /* Diffraction_SimulatorApp.swift */; };
+		E81DECDF2FD1F24400E0544E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DECCE2FD1F24400E0544E /* ContentView.swift */; };
+		E81DECE02FD1F24400E0544E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81DECCB2FD1F24400E0544E /* Preview Assets.xcassets */; };
+		E81DECE12FD1F24400E0544E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81DECCD2FD1F24400E0544E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +46,17 @@
 
 /* Begin PBXFileReference section */
 		335467D32D569D1600E132AA /* Diffraction Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diffraction Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		335467D62D569D1600E132AA /* Diffraction_SimulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorApp.swift; sourceTree = "<group>"; };
-		335467D82D569D1600E132AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		335467DA2D569D1800E132AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		335467DC2D569D1800E132AA /* Diffraction_Simulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diffraction_Simulator.entitlements; sourceTree = "<group>"; };
-		335467DE2D569D1800E132AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		335467E42D569D1800E132AA /* Diffraction SimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diffraction SimulatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		335467E82D569D1800E132AA /* Diffraction_SimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorTests.swift; sourceTree = "<group>"; };
 		335467EE2D569D1800E132AA /* Diffraction SimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diffraction SimulatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		335467F22D569D1800E132AA /* Diffraction_SimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorUITests.swift; sourceTree = "<group>"; };
-		335467F42D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3392488E2D8626EB00DF6874 /* Mathematica Source Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mathematica Source Code.swift"; sourceTree = "<group>"; };
+		E81DECC62FD1F22700E0544E /* Diffraction_SimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorUITests.swift; sourceTree = "<group>"; };
+		E81DECC72FD1F22700E0544E /* Diffraction_SimulatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E81DECCB2FD1F24400E0544E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E81DECCD2FD1F24400E0544E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E81DECCE2FD1F24400E0544E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E81DECCF2FD1F24400E0544E /* Diffraction_Simulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diffraction_Simulator.entitlements; sourceTree = "<group>"; };
+		E81DECD02FD1F24400E0544E /* Diffraction_SimulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffraction_SimulatorApp.swift; sourceTree = "<group>"; };
+		E81DECD12FD1F24400E0544E /* Mathematica Source Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mathematica Source Code.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +87,9 @@
 		335467CA2D569D1600E132AA = {
 			isa = PBXGroup;
 			children = (
-				335467D52D569D1600E132AA /* Diffraction Simulator */,
+				E81DECC82FD1F22700E0544E /* Diffraction SimulatorUITests */,
+				E81DECD22FD1F24400E0544E /* Diffraction Simulator */,
 				335467E72D569D1800E132AA /* Diffraction SimulatorTests */,
-				335467F12D569D1800E132AA /* Diffraction SimulatorUITests */,
 				335467D42D569D1600E132AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,27 +104,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		335467D52D569D1600E132AA /* Diffraction Simulator */ = {
-			isa = PBXGroup;
-			children = (
-				335467D62D569D1600E132AA /* Diffraction_SimulatorApp.swift */,
-				335467D82D569D1600E132AA /* ContentView.swift */,
-				3392488E2D8626EB00DF6874 /* Mathematica Source Code.swift */,
-				335467DA2D569D1800E132AA /* Assets.xcassets */,
-				335467DC2D569D1800E132AA /* Diffraction_Simulator.entitlements */,
-				335467DD2D569D1800E132AA /* Preview Content */,
-			);
-			path = "Diffraction Simulator";
-			sourceTree = "<group>";
-		};
-		335467DD2D569D1800E132AA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				335467DE2D569D1800E132AA /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		335467E72D569D1800E132AA /* Diffraction SimulatorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +112,34 @@
 			path = "Diffraction SimulatorTests";
 			sourceTree = "<group>";
 		};
-		335467F12D569D1800E132AA /* Diffraction SimulatorUITests */ = {
+		E81DECC82FD1F22700E0544E /* Diffraction SimulatorUITests */ = {
 			isa = PBXGroup;
 			children = (
-				335467F22D569D1800E132AA /* Diffraction_SimulatorUITests.swift */,
-				335467F42D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift */,
+				E81DECC62FD1F22700E0544E /* Diffraction_SimulatorUITests.swift */,
+				E81DECC72FD1F22700E0544E /* Diffraction_SimulatorUITestsLaunchTests.swift */,
 			);
 			path = "Diffraction SimulatorUITests";
+			sourceTree = "<group>";
+		};
+		E81DECCC2FD1F24400E0544E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E81DECCB2FD1F24400E0544E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E81DECD22FD1F24400E0544E /* Diffraction Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				E81DECCC2FD1F24400E0544E /* Preview Content */,
+				E81DECCD2FD1F24400E0544E /* Assets.xcassets */,
+				E81DECCE2FD1F24400E0544E /* ContentView.swift */,
+				E81DECCF2FD1F24400E0544E /* Diffraction_Simulator.entitlements */,
+				E81DECD02FD1F24400E0544E /* Diffraction_SimulatorApp.swift */,
+				E81DECD12FD1F24400E0544E /* Mathematica Source Code.swift */,
+			);
+			path = "Diffraction Simulator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +246,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335467DF2D569D1800E132AA /* Preview Assets.xcassets in Resources */,
-				335467DB2D569D1800E132AA /* Assets.xcassets in Resources */,
+				E81DECE02FD1F24400E0544E /* Preview Assets.xcassets in Resources */,
+				E81DECE12FD1F24400E0544E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81DECD82FD1F24400E0544E /* Preview Assets.xcassets in Resources */,
+				E81DECD92FD1F24400E0544E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +264,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81DECD62FD1F24400E0544E /* Preview Assets.xcassets in Resources */,
+				E81DECD72FD1F24400E0544E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335467D92D569D1600E132AA /* ContentView.swift in Sources */,
-				3392488F2D8626EB00DF6874 /* Mathematica Source Code.swift in Sources */,
-				335467D72D569D1600E132AA /* Diffraction_SimulatorApp.swift in Sources */,
+				E81DECDD2FD1F24400E0544E /* Mathematica Source Code.swift in Sources */,
+				E81DECDE2FD1F24400E0544E /* Diffraction_SimulatorApp.swift in Sources */,
+				E81DECDF2FD1F24400E0544E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				335467E92D569D1800E132AA /* Diffraction_SimulatorTests.swift in Sources */,
+				E81DECC92FD1F22700E0544E /* Diffraction_SimulatorUITests.swift in Sources */,
+				E81DECDA2FD1F24400E0544E /* Mathematica Source Code.swift in Sources */,
+				E81DECDB2FD1F24400E0544E /* Diffraction_SimulatorApp.swift in Sources */,
+				E81DECDC2FD1F24400E0544E /* ContentView.swift in Sources */,
+				E81DECCA2FD1F22700E0544E /* Diffraction_SimulatorUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335467F32D569D1800E132AA /* Diffraction_SimulatorUITests.swift in Sources */,
-				335467F52D569D1800E132AA /* Diffraction_SimulatorUITestsLaunchTests.swift in Sources */,
+				E81DECD32FD1F24400E0544E /* Mathematica Source Code.swift in Sources */,
+				E81DECD42FD1F24400E0544E /* Diffraction_SimulatorApp.swift in Sources */,
+				E81DECD52FD1F24400E0544E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +510,6 @@
 		335467FC2D569D1800E132AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -512,7 +531,6 @@
 		335467FD2D569D1800E132AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -534,7 +552,6 @@
 		335467FF2D569D1800E132AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -555,7 +572,6 @@
 		335468002D569D1800E132AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

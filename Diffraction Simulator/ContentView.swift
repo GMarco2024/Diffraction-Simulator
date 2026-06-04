@@ -54,16 +54,16 @@ struct SimulationParameters {
             throw ValidationError(message: "Grating period must be a positive number")
         }
         guard let nu1 = Double(gratingNu1), nu1 > 0, nu1 <= 1 else {
-            throw ValidationError(message: "Nu1 must be between 0 and 1")
+            throw ValidationError(message: "Grating 1 fraction must be between 0 and 1")
         }
         guard let nu2 = Double(gratingNu2), nu2 > 0, nu2 <= 1 else {
-            throw ValidationError(message: "Nu2 must be between 0 and 1")
+            throw ValidationError(message: "Grating 2 fraction must be between 0 and 1")
         }
         guard let X2 = Double(gratingX2) else {
-            throw ValidationError(message: "G2 offset must be a valid number")
+            throw ValidationError(message: "Grating 2 offset must be a valid number")
         }
         guard let Z1 = Double(gratingZ1), Z1 > 0 else {
-            throw ValidationError(message: "Z1 must be a positive number")
+            throw ValidationError(message: "Distance to Grating 1 must be a positive number")
         }
         guard let theta = Double(twist) else {
             throw ValidationError(message: "Twist must be a valid number")
@@ -439,8 +439,11 @@ struct IntensityPlotView: View {
                 EmptyView()
             } else {
                 let cols = matrix[0].count
-                let cellWidth = geo.size.width / CGFloat(cols)
-                let cellHeight = geo.size.height / CGFloat(rows)
+                
+                // Swap how we use rows and cols to natively rotate the plot CCW
+                let cellWidth = geo.size.width / CGFloat(rows)
+                let cellHeight = geo.size.height / CGFloat(cols)
+                
                 let flat = matrix.flatMap { $0 }
                 let maxVal = flat.max() ?? 1.0
                 let minVal = flat.min() ?? 0.0
@@ -451,19 +454,21 @@ struct IntensityPlotView: View {
                             let denom = max(maxVal - minVal, 1e-12)
                             let raw = (matrix[i][j] - minVal) / denom
                             let norm = raw.isFinite ? raw : 0.0
-                            let rect = CGRect(x: CGFloat(j) * cellWidth,
-                                              y: CGFloat(i) * cellHeight,
-                                              width: cellWidth,
-                                              height: cellHeight)
+                            
+                            // i (Z-axis) maps to the horizontal X coordinate
+                            // j (X-axis) maps to the vertical Y coordinate, inverted to match the previous -90deg rotation
+                            let rect = CGRect(
+                                x: CGFloat(i) * cellWidth,
+                                y: CGFloat(cols - 1 - j) * cellHeight,
+                                width: cellWidth,
+                                height: cellHeight
+                            )
                             context.fill(Path(rect), with: .color(colorForIntensity(norm: norm)))
                         }
                     }
                 }
-                // Rotate so that the diffraction pattern displays correctly.
-                .rotationEffect(.degrees(-90))
             }
         }
-        .aspectRatio(0.75, contentMode: .fit)
     }
 }
 
@@ -494,32 +499,35 @@ struct ContentView: View {
         HStack(spacing: 0) {
             // Left panel: inputs and controls
             VStack(alignment: .leading, spacing: 16) {
-                Text("Diffraction Simulator")
-                    .font(.title)
+                Text("Wave Interference & Diffraction Simulator")
+                    .font(.title2)
+                    .fontWeight(.bold)
                     .foregroundColor(customColor)
                     .padding(.bottom, 8)
 
                 ScrollView {
                     VStack(spacing: 20) {
                         // Parameter groups in a vertical stack
-                        parameterGroup(title: "Beam parameters", fields: [
-                            ("w0 =", $beamWidth),
-                            ("r0 =", $curvature),
-                            ("ell0 =", $coherence),
-                            ("λ =", $wavelength)
+                        parameterGroup(title: "Initial Beam Parameters", fields: [
+                            ("Initial Beam Width (w₀)", $beamWidth),
+                            ("Wavefront Curvature Radius (r₀)", $curvature),
+                            ("Transverse Coherence Width (ℓ₀)", $coherence),
+                            ("Wavelength (λ)", $wavelength)
                         ])
 
-                        parameterGroup(title: "Grating parameters", fields: [
-                            ("d =", $gratingPeriod),
-                            ("ν₁ =", $gratingNu1),
-                            ("ν₂ =", $gratingNu2),
-                            ("X₂ =", $gratingX2),
-                            ("Z₁ =", $gratingZ1),
-                            ("θ =", $twist)
+                        parameterGroup(title: "Grating Parameters", fields: [
+                            ("Grating Period / Spacing (d)", $gratingPeriod),
+                            ("Grating 1 Open Fraction (ν₁)", $gratingNu1),
+                            ("Grating 2 Open Fraction (ν₂)", $gratingNu2),
+                            ("Grating 2 Offset (X₂)", $gratingX2),
+                            ("Distance to Grating 1 (Z₁)", $gratingZ1),
+                            ("Twist Angle Between Gratings (θ°)", $twist)
                         ])
 
                         Toggle("Use image-charge Fourier coefficients", isOn: $imageEnabled)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
+                            .foregroundColor(customColor)
+                            .padding(.top, 4)
                     }
                 }
 
@@ -527,15 +535,16 @@ struct ContentView: View {
                     Text(isRunning ? "Running..." : "Run Simulation")
                         .font(.headline)
                         .foregroundColor(.white)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 18)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
                         .background(isRunning ? Color.gray : Color.blue)
-                        .cornerRadius(8)
+                        .cornerRadius(10)
                 }
                 .disabled(isRunning)
+                .padding(.top, 8)
             }
             .padding()
-            .frame(minWidth: 320, idealWidth: 360, maxWidth: 420, maxHeight: .infinity, alignment: .topLeading)
+            .frame(minWidth: 320, idealWidth: 380, maxWidth: 420, maxHeight: .infinity, alignment: .topLeading)
             .background(Color.black.opacity(0.02))
 
             Divider()
@@ -573,22 +582,33 @@ struct ContentView: View {
         }
     }
     
-    /// Groups parameters into a VStack with a title and text fields.
+    /// Groups parameters into a nicely styled VStack with a title and text fields.
     func parameterGroup(title: String, fields: [(String, Binding<String>)]) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 14) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(customColor)
+                .padding(.bottom, 2)
+            
             ForEach(Array(fields.enumerated()), id: \.0) { idx, field in
                 HStack {
                     Text(field.0)
                         .foregroundColor(customColor)
+                        .font(.subheadline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
                     TextField("", text: field.1)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width: 140)
+                        .frame(width: 110)
+                        #if os(iOS)
+                        .keyboardType(.numbersAndPunctuation)
+                        #endif
                 }
             }
         }
+        .padding()
+        .background(Color.black.opacity(0.04)) // Gives a slight card-like appearance
+        .cornerRadius(12)
     }
     
     /// Runs the simulation; validates input, computes the intensity matrix, and handles errors.

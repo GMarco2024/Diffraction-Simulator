@@ -230,7 +230,6 @@ func rz(z: Double, r0: Double, ell0: Double, w0: Double, lambda: Double) -> Doub
 // MARK: - Core Simulation Functions
 
 /// Computes the intensity profile before the grating.
-/// Uses a Gaussian profile shaped by the beam width.
 func gp0(z: Double, r0: Double, ell0: Double, w0: Double, lambda: Double,
          xpoints: Int, Xmin: Double, Xmax: Double) -> [(x: Double, value: Double)] {
     let w = wz(z: z, r0: r0, ell0: ell0, w0: w0, lambda: lambda)
@@ -362,7 +361,6 @@ func gp2(z12: Double, z23: Double, theta: Double,
 
 /// Runs the simulation and returns a 2D intensity matrix.
 func simulateIntensityMap(params: SimulationParameters) -> [[Double]] {
-    // Characteristic length along the propagation axis.
     let LT = pow(params.d, 2) / params.lambda
     let NZ = floor(20e-3 / LT)
     let Z1 = params.Z1
@@ -378,7 +376,6 @@ func simulateIntensityMap(params: SimulationParameters) -> [[Double]] {
     let Xmin = -100 * params.d
     let Xmax = 100 * params.d
     
-    // Precompute beam parameters at the grating position.
     let r1 = rz(z: Z1, r0: params.r0, ell0: params.ell0, w0: params.w0, lambda: params.lambda)
     let ell1 = ellz(z: Z1, r0: params.r0, ell0: params.ell0, w0: params.w0, lambda: params.lambda)
     let w1 = wz(z: Z1, r0: params.r0, ell0: params.ell0, w0: params.w0, lambda: params.lambda)
@@ -424,8 +421,10 @@ func simulateIntensityMap(params: SimulationParameters) -> [[Double]] {
 
 struct IntensityPlotView: View {
     let matrix: [[Double]]
+    let visibleRows: Int
+    let minVal: Double
+    let maxVal: Double
     
-    /// Computes a grayscale color for an intensity value normalized between min and max.
     func colorForIntensity(norm: Double) -> Color {
         let v = norm.isFinite ? norm : 0.0
         let clamped = min(max(v, 0.0), 1.0)
@@ -447,26 +446,24 @@ struct IntensityPlotView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .rotationEffect(.degrees(-90))
-                    // .fixedSize() ensures the text frame doesn't get clipped after rotation
                     .fixedSize()
                 
                 // The Plot
                 GeometryReader { geo in
-                    let rows = matrix.count
-                    if rows == 0 {
+                    let totalRows = matrix.count
+                    if totalRows == 0 {
                         EmptyView()
                     } else {
                         let cols = matrix[0].count
                         
-                        let cellWidth = geo.size.width / CGFloat(rows)
+                        // We use the totalRows for cellWidth so the plot scale doesn't stretch during animation
+                        let cellWidth = geo.size.width / CGFloat(totalRows)
                         let cellHeight = geo.size.height / CGFloat(cols)
                         
-                        let flat = matrix.flatMap { $0 }
-                        let maxVal = flat.max() ?? 1.0
-                        let minVal = flat.min() ?? 0.0
-                        
                         Canvas { context, _ in
-                            for i in 0..<rows {
+                            // Only loop up to the visibleRows
+                            let limit = min(visibleRows, totalRows)
+                            for i in 0..<limit {
                                 for j in 0..<cols {
                                     let denom = max(maxVal - minVal, 1e-12)
                                     let raw = (matrix[i][j] - minVal) / denom
@@ -475,8 +472,8 @@ struct IntensityPlotView: View {
                                     let rect = CGRect(
                                         x: CGFloat(i) * cellWidth,
                                         y: CGFloat(cols - 1 - j) * cellHeight,
-                                        width: cellWidth,
-                                        height: cellHeight
+                                        width: cellWidth + 0.5, // +0.5 to prevent tiny visual gaps between cells
+                                        height: cellHeight + 0.5
                                     )
                                     context.fill(Path(rect), with: .color(colorForIntensity(norm: norm)))
                                 }
@@ -484,20 +481,18 @@ struct IntensityPlotView: View {
                         }
                     }
                 }
-                .border(Color.gray.opacity(0.3), width: 1) // Add a border so the edges are visible
+                .border(Color.gray.opacity(0.3), width: 1)
             }
             
             // X-Axis Label
             Text("Propagation Distance (Z)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-                .padding(.bottom, 4)
         }
     }
 }
 
 struct ContentView: View {
-    // Input fields with default values.
     @State private var beamWidth = "5e-06"
     @State private var curvature = "-9.99e+20"
     @State private var coherence = "5e-06"
@@ -512,11 +507,21 @@ struct ContentView: View {
     @State private var isRunning = false
     @State private var runTask: Task<Void, Never>? = nil
     
+    // Matrix data & Pre-computed scale
     @State private var intensityMatrix: [[Double]] = []
+    @State private var matrixMin: Double = 0.0
+    @State private var matrixMax: Double = 1.0
+    
+    // Error Handling
     @State private var errorMessage: String = ""
     @State private var showError = false
     
-    // Beige color. You can customize whatever color you want.
+    // Animation controls
+    @State private var visibleRows: Int = 0
+    @State private var isPlaying = false
+    @State private var playbackSpeed: Double = 5.0
+    @State private var playbackTask: Task<Void, Never>? = nil
+    
     private let customColor = Color(red: 0.96, green: 0.93, blue: 0.85)
     
     var body: some View {
@@ -531,7 +536,6 @@ struct ContentView: View {
 
                 ScrollView {
                     VStack(spacing: 20) {
-                        // Parameter groups in a vertical stack
                         parameterGroup(title: "Initial Beam Parameters", fields: [
                             ("Initial Beam Width (w₀)", $beamWidth),
                             ("Wavefront Curvature Radius (r₀)", $curvature),
@@ -581,11 +585,38 @@ struct ContentView: View {
                 }
 
                 if !intensityMatrix.isEmpty {
-                    IntensityPlotView(matrix: intensityMatrix)
-                        .padding()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    // Placeholder when no data
+                    IntensityPlotView(
+                        matrix: intensityMatrix,
+                        visibleRows: visibleRows,
+                        minVal: matrixMin,
+                        maxVal: matrixMax
+                    )
+                    .padding(.horizontal)
+                    .padding(.top)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                    // Playback Controls
+                    HStack(spacing: 16) {
+                        Button(action: togglePlayback) {
+                            Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                                .font(.title2)
+                                .foregroundColor(.blue)
+                                .frame(width: 44, height: 44)
+                                .background(Color.blue.opacity(0.1))
+                                .clipShape(Circle())
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Playback Speed")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Slider(value: $playbackSpeed, in: 1...20)
+                        }
+                        .frame(maxWidth: 200)
+                    }
+                    .padding(.bottom, 20)
+                    
+                } else if !isRunning {
                     ZStack {
                         Color.clear
                         Text("Run the simulation to see results")
@@ -594,7 +625,6 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
         .padding()
@@ -606,7 +636,6 @@ struct ContentView: View {
         }
     }
     
-    /// Groups parameters into a nicely styled VStack with a title and text fields.
     func parameterGroup(title: String, fields: [(String, Binding<String>)]) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             Text(title)
@@ -631,17 +660,13 @@ struct ContentView: View {
             }
         }
         .padding()
-        .background(Color.black.opacity(0.04)) // Gives a slight card-like appearance
+        .background(Color.black.opacity(0.04))
         .cornerRadius(12)
     }
     
-    /// Runs the simulation; validates input, computes the intensity matrix, and handles errors.
     func runSimulation() {
-        // Prevent overlapping runs
-        if isRunning {
-            return
-        }
-
+        if isRunning { return }
+        
         do {
             let params = try SimulationParameters.validate(
                 beamWidth: beamWidth,
@@ -656,31 +681,71 @@ struct ContentView: View {
                 twist: twist,
                 imageEnabled: imageEnabled
             )
-            // Cancel any previous pending task just in case
+            
             runTask?.cancel()
-
+            playbackTask?.cancel()
+            
             intensityMatrix = []
             isRunning = true
+            isPlaying = false
             showError = false
 
             runTask = Task.detached(priority: .userInitiated) {
                 let matrix = simulateIntensityMap(params: params)
                 if Task.isCancelled { return }
+                
+                // Pre-compute min and max dynamically so Canvas doesn't lag
+                let flat = matrix.flatMap { $0 }
+                let computedMax = flat.max() ?? 1.0
+                let computedMin = flat.min() ?? 0.0
+                
                 await MainActor.run {
                     intensityMatrix = matrix
+                    matrixMin = computedMin
+                    matrixMax = computedMax
+                    visibleRows = matrix.count // Show the full matrix upon generation
                     isRunning = false
                 }
             }
         } catch let error as ValidationError {
             errorMessage = error.message
             showError = true
-            intensityMatrix = []
             isRunning = false
         } catch {
             errorMessage = "An unexpected error occurred"
             showError = true
-            intensityMatrix = []
             isRunning = false
+        }
+    }
+    
+    func togglePlayback() {
+        if isPlaying {
+            // Pause
+            isPlaying = false
+            playbackTask?.cancel()
+        } else {
+            // Play
+            if visibleRows >= intensityMatrix.count {
+                visibleRows = 0 // Restart if it's already at the end
+            }
+            isPlaying = true
+            
+            playbackTask = Task {
+                while isPlaying && visibleRows < intensityMatrix.count {
+                    // ~30 fps update loop (33,333,333 nanoseconds)
+                    try? await Task.sleep(nanoseconds: 33_333_333)
+                    
+                    if Task.isCancelled { break }
+                    
+                    await MainActor.run {
+                        visibleRows += Int(playbackSpeed)
+                        if visibleRows >= intensityMatrix.count {
+                            visibleRows = intensityMatrix.count
+                            isPlaying = false // Stop playing at the end
+                        }
+                    }
+                }
+            }
         }
     }
 }

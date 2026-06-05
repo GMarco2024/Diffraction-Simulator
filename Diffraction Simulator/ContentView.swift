@@ -519,8 +519,7 @@ struct ContentView: View {
     // Animation controls
     @State private var visibleRows: Int = 0
     @State private var isPlaying = false
-    @State private var playbackSpeed: Double = 5.0
-    @State private var playbackTask: Task<Void, Never>? = nil
+        @State private var playbackTask: Task<Void, Never>? = nil
     
     private let customColor = Color(red: 0.96, green: 0.93, blue: 0.85)
     
@@ -594,27 +593,6 @@ struct ContentView: View {
                     .padding(.horizontal)
                     .padding(.top)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
-                    // Playback Controls
-                    HStack(spacing: 16) {
-                        Button(action: togglePlayback) {
-                            Image(systemName: isPlaying ? "pause.fill" : "play.fill")
-                                .font(.title2)
-                                .foregroundColor(.blue)
-                                .frame(width: 44, height: 44)
-                                .background(Color.blue.opacity(0.1))
-                                .clipShape(Circle())
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Playback Speed")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                            Slider(value: $playbackSpeed, in: 1...20)
-                        }
-                        .frame(maxWidth: 200)
-                    }
-                    .padding(.bottom, 20)
                     
                 } else if !isRunning {
                     ZStack {
@@ -738,7 +716,7 @@ struct ContentView: View {
                     if Task.isCancelled { break }
                     
                     await MainActor.run {
-                        visibleRows += Int(playbackSpeed)
+                        visibleRows += 5
                         if visibleRows >= intensityMatrix.count {
                             visibleRows = intensityMatrix.count
                             isPlaying = false // Stop playing at the end
@@ -755,3 +733,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
